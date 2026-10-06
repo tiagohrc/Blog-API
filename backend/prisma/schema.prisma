@@ -1,0 +1,48 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum USER_ROLE {
+    ADMIN
+    USER
+}
+
+model User {
+    id Int @id @default(autoincrement())
+    username String @unique
+    password String
+    email String @unique
+    role USER_ROLE @default(USER)
+    comments Comment[]
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updatedAt")
+}
+
+model Article {
+    id Int @id @default(autoincrement())
+    title String
+    content String
+    about String
+    tempoLeitura Int @map("tempo_de_leitura")
+    image String?
+    comment Comment[]
+    isDestaque Boolean @default(false) @map("is_destaque")
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+
+    }
+
+model Comment {
+    id Int @id @default(autoincrement())
+    userId Int @map("user_id")
+    user User @relation(fields: [userId], references: [id])
+    articleId Int @map("article_id")
+    articles Article @relation(fields: [articleId], references: [id])
+    content String
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+}
