@@ -1,6 +1,6 @@
 # Blog-API
 
-API REST para um blog de uma jornalista, com artigos, comentários e autenticação de usuários. Construída em Node.js/TypeScript seguindo os princípios de Clean Architecture (controllers → use cases → repositórios).
+API REST para um blog jornalístico, com artigos, comentários e autenticação de usuários. Construída em Node.js/TypeScript seguindo os princípios de Clean Architecture (controllers → use cases → repositórios).
 
 ## Stack
 
