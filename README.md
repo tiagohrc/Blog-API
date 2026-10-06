@@ -78,12 +78,12 @@ HOST="0.0.0.0"
 HASH_SALT_ROUNDS=10
 
 POSTGRES_HOST=localhost
-POSTGRES_USER=teste
-POSTGRES_PASSWORD=tiago19
+POSTGRES_USER=seu_usuario
+POSTGRES_PASSWORD=sua_senha
 POSTGRES_DB=postgres
 POSTGRES_PORT=5432
 
-DATABASE_URL="postgresql://teste:tiago19@localhost:5432/postgres?schema=public"
+DATABASE_URL="postgresql://seu_usuario:sua_senha@localhost:5433/postgres?schema=public"
 
 JWT_SECRET="gere-um-valor-aleatorio-com-openssl-rand--base64-32"
 ```
